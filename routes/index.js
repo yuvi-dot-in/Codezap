@@ -9,8 +9,4 @@ Router.use("/users", ensureAuthenticated, require("./user/user"));
 // Router.use("/practice")
 // Router.use("/admin")
 
-Router.get("/", ensureAuthenticated, (req, res) => {
-  return res.send("hi");
-});
-
 module.exports = Router;
