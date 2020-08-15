@@ -2,6 +2,8 @@
 const express = require("express");
 const app = express();
 
+const mongoose = require("mongoose");
+
 const cors = require("cors");
 app.use(cors());
 const bodyParser = require("body-parser");
@@ -9,17 +11,46 @@ app.use(bodyParser.json());
 
 require("dotenv").config();
 
-const PORT = process.env.PORT || 1337;
+let mongo_uri = undefined;
+if (process.env.ENVIRONMENT == "DEV") {
+  mongo_uri = "mongodb://127.0.0.1:27017/codezap";
+} else {
+  mongo_uri = process.env.MONGODB_URI;
+}
 
-app.use("/", require("./routes"));
+mongoose.connect(mongo_uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
-// error handler
-app.use((err, req, res, next) => {
-  console.log(err.message);
-  return res.status(400).send({
-    message: err.message,
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {
+  console.log("db connected");
+
+  app.use("/", (req, res, next) => {
+    console.log(
+      "inside troubleshooting middleware\n======================================================================"
+    );
+    console.log(req.method, " request at: ", req.path);
+    console.log("request body:\n", req.body);
+    console.log("request params:\n", req.params);
+    next();
+  });
+
+  app.use("/", require("./routes"));
+
+  // error handler
+  app.use((err, req, res, next) => {
+    console.log(err.message);
+    return res.status(400).send({
+      message: err.message,
+    });
   });
 });
+
+const PORT = process.env.PORT || 1337;
 
 app.listen(PORT, () => {
   console.log(`app running on port ${PORT}`);

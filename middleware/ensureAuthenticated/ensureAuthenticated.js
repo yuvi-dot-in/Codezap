@@ -20,12 +20,18 @@ admin.initializeApp({
 });
 
 const checkAuth = (req, res, next) => {
+  console.log(
+    "inside ensureAuth middleware\n###############################################"
+  );
+
   if (req.headers.authtoken) {
-      if (req.headers.authtoken == "test") {
-          req.user = {
-              user_id: "j4vM2gwuiARNg7c5uAbMddXVxiJ2",
-              email : "abc@gmail.com"
-          };
+    if (req.headers.authtoken == "test") {
+      req.user = {
+        user_id: "j4vM2gwuiARNg7c5uAbMddXVxiJ2",
+        email: "abc@gmail.com",
+      };
+      console.log("decoded token", req.user);
+      next();
     } else {
       admin
         .auth()

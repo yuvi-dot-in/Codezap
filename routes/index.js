@@ -3,7 +3,8 @@
 const Router = require("express").Router();
 
 const ensureAuthenticated = require("../middleware/ensureAuthenticated/ensureAuthenticated");
-Router.use("/user", require("./user/user"));
+
+Router.use("/users", ensureAuthenticated, require("./user/user"));
 // Router.use("/contest")
 // Router.use("/practice")
 // Router.use("/admin")
@@ -11,7 +12,5 @@ Router.use("/user", require("./user/user"));
 Router.get("/", ensureAuthenticated, (req, res) => {
   return res.send("hi");
 });
-
-
 
 module.exports = Router;
