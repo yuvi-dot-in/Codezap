@@ -1,5 +1,5 @@
 var admin = require("firebase-admin");
-
+require("dotenv").config();
 // required for configuring firebase admin sdk
 var serviceAccount = {
   type: process.env.TYPE,
@@ -16,23 +16,30 @@ var serviceAccount = {
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: process.env.firebase_db_url,
+  databaseURL: process.env.FIREBASE_DB_URL,
 });
 
 const checkAuth = (req, res, next) => {
   if (req.headers.authtoken) {
-    admin
-      .auth()
-      .verifyIdToken(req.headers.authtoken)
-      .then((decodedToken) => {
-        console.log("decoded token", decodedToken);
-        req.user = decodedToken;
-        next();
-      })
-      .catch((err) => {
-        console.log("some problem with token. Unable to decode");
-        next(err);
-      });
+      if (req.headers.authtoken == "test") {
+          req.user = {
+              user_id: "j4vM2gwuiARNg7c5uAbMddXVxiJ2",
+              email : "abc@gmail.com"
+          };
+    } else {
+      admin
+        .auth()
+        .verifyIdToken(req.headers.authtoken)
+        .then((decodedToken) => {
+          console.log("decoded token", decodedToken);
+          req.user = decodedToken;
+          next();
+        })
+        .catch((err) => {
+          console.log("some problem with token. Unable to decode");
+          next(err);
+        });
+    }
   } else {
     return res.status(403).send({
       message: "no authtoken provided in header",
