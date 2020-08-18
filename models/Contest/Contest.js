@@ -9,16 +9,19 @@ const contestSchema = mongoose.Schema({
   },
   logo: {
     type: String,
+    validate: /^data:image\/[^;]+;base64[^"]+$/,
   },
   startTime: {
     type: Date,
+    required: true,
   },
   endTime: {
     type: Date,
+    required: true,
   },
   description: {
     type: String,
-    default: "",
+    required: true,
   },
   approved: {
     type: Boolean,
