@@ -4,7 +4,7 @@
 
 ## Problems
 
-- You can have problems that either belong to a contest or not belong to contest (those will be practice problems). the problems that have a contest associated will only be accessible to participants of contest and that too only within the given contest time period. However, creators/admin of contest can see those problems at any time and also see the
+- You can have problems that either belong to a contest or not belong to contest (those will be practice problems). the problems that have a contest associated will only be accessible to participants of contest and that too only within the given contest time period. However, creators/admin of contest can see those problems at any time.
 
 ## Leaderboard
 
