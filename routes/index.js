@@ -2,14 +2,11 @@
 
 const Router = require("express").Router();
 
-Router.use("/user", require("./user/user"));
+const ensureAuthenticated = require("../middleware/ensureAuthenticated/ensureAuthenticated");
+
+Router.use("/users", ensureAuthenticated, require("./user/user"));
 // Router.use("/contest")
 // Router.use("/practice")
 // Router.use("/admin")
-
-
-Router.get("/", (req, res) => {
-  return res.send("hi");
-});
 
 module.exports = Router;
