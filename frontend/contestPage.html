@@ -23,9 +23,9 @@
         box-shadow: 0px 5px 38px #00000042;
         border-radius: 10px;
         opacity: 1;
-        width: 7vw;
-        height: 3vw;
-        font-size: 1vw;
+        width: 90px;
+        height: 35px;
+        font-size: 16px;
         border: 0px;
         margin-left: auto;
         margin-right: 35px;
@@ -66,9 +66,8 @@
     .wrapper {
         display: grid;
         grid-template-columns: 3fr 1fr;
-        height: max-content;
+        height: 100%;
         grid-auto-rows: minmax(100%, auto);
-        padding-bottom: 10vw;
     }
 
     .my-nav2 {
@@ -80,18 +79,6 @@
         letter-spacing: 0px;
         color: #455A64;
         box-shadow: 0px 2px 20px #00000042;
-    }
-    @media only screen and (max-width:414px) {
-       .nav-head,.img-nav{
-           
-           margin-top: -10px;
-       }
-       .wrapper .leader-board{
-           display: none;
-       }
-       .wrapper{
-           grid-template-columns: 1fr 0fr;
-       }
     }
     .my-nav2 span{
         font-size: 2.2vw;
@@ -127,8 +114,7 @@
     }
 
     .wrapper .contest {
-        height: max-content;
-        
+        height: 100%;
     }
 
     .ranking {
@@ -186,7 +172,6 @@
         box-shadow: 0px 1px 10px #00000042;
         padding: 3vw;
         color: #455A64;
-        font-size: 2vw;
     }
 
     .question-box p {
@@ -248,6 +233,26 @@
 
     .problem-list a:hover {
         text-decoration: none;
+    }
+    @media only screen and (max-width:414px) {
+       .my-nav2{
+           height: 12vw;
+       }
+       .my-nav2 span{
+           font-size: 4vw;
+       }
+       .wrapper .leader-board{
+           display: none;
+       }
+       .wrapper{
+           grid-template-columns: 1fr 0fr;
+       }
+       .question-box h1{
+           font-size: 7vw;
+       }
+       .question-box p{
+           font-size: 3vw;
+       }
     }
 </style>
 
