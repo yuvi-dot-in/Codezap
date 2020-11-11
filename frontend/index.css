@@ -18,6 +18,19 @@
     box-shadow: #00000042 0px 5px 38px;
     font: normal normal medium 33px/39px Roboto;
 }
+button:hover{
+    background-color: white;
+    color: #FF405F;
+    transition: background-color 0.1s linear;
+}
+button:focus{
+    outline: none !important;
+}
+button:active {
+    box-shadow: 0 1px 10px #FF405F;
+transform: scale(1.05);
+transition: 0s;
+}
 
 .join_button
 {
@@ -87,15 +100,18 @@
 .my-card
 { 
     
+    
+    width: 85%;
+    height: 40%;
+    max-height: 85%;
+    
+}
+.card-body{
     border-bottom: #FF405F solid 5px;
     box-shadow: 0px 2px 20px #00000042;
     border-radius: 2px;
     opacity: 1;
     background-color: white;
-    width: 85%;
-    height: 40%;
-    max-height: 85%;
-    
 }
 
 .nav-head
@@ -152,13 +168,14 @@
         width: 20px;
     }
 
+
 .contestant_count
 {
     color:#FF0000;
     font-size: 25px;
 }
 
-//MEDIA QUERIES//
+/* //MEDIA QUERIES// */
 
 
 @media screen and (max-width:1200px)
@@ -229,6 +246,35 @@
 }
 }
 
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    
+  }
+.modal-content{
+    width: 40%;
+    height: max-content;
+    padding: 1%;
+    background-color: white;
+    box-shadow: 0px 2px 20px #00000042;
+}
+.modal-content-inner{
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2vw;
+}
+.modal-content-inner form,.modal-content-inner{
+    padding-top: 1vw;
+}
+  
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
-
+}
