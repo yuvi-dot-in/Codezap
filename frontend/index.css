@@ -1,4 +1,6 @@
-
+body{
+    color: #484A4B;
+}
 
 .log_button
 {
@@ -15,14 +17,8 @@
     margin-bottom: 20px;
     color: whitesmoke;
     font-weight: 400;
-    box-shadow: #00000042 0px 5px 38px;
-    font: normal normal medium 33px/39px Roboto;
 }
-button:hover{
-    background-color: white;
-    color: #FF405F;
-    transition: background-color 0.1s linear;
-}
+
 button:focus{
     outline: none !important;
 }
@@ -161,8 +157,8 @@ transition: 0s;
 
 
 .card_img
-    {
-        margin-left: 110px; 
+    {   
+        margin-left: 30%;
         margin-top: 0;
         border-radius: 50%;
         width: 20px;
@@ -246,8 +242,8 @@ transition: 0s;
 }
 }
 
-.modal {
-    display: block; /* Hidden by default */
+.mod{
+    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -255,26 +251,74 @@ transition: 0s;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    
+    background-color: rgba(0, 0, 0, 0.644);    
   }
-.modal-content{
-    width: 40%;
+.mod-content{
+    width: 35% ;
     height: max-content;
-    padding: 1%;
+    margin: 5% 0%;
     background-color: white;
     box-shadow: 0px 2px 20px #00000042;
 }
-.modal-content-inner{
-    display: flexbox;
-    justify-content: center;
+.mod-content-inner{
+    
     text-align: center;
-    padding: 0 2vw;
+    padding: 10% 10%;
+    flex-direction: column;
 }
-.modal-content-inner form,.modal-content-inner{
-    padding-top: 1vw;
+.mod-content-inner h1{
+    font-size: 2vw;
 }
-  
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+.mod-content .close{
+    display: block;
+    align-self: flex-end;
+    width: max-content;
+    padding-right: 1%;
+    margin-top: -9px;
+    font-size: 40px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.mod-content-inner form label{
+    font-weight: 700;
+    font-size: 1rem;
+}
+.mod-content-inner form input[type=text]{
+    border: 2px solid #455A64;
+    border-radius: 5px;
+    width: 50%;
+}
+input:focus{
+    outline: none;
+}
+.mod-content-inner form button{
+    background: #FF405F 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 38px #00000042;
+    border-radius: 10px;
+    border: none;
+    height: max-content;
+    padding: 2% 5%;
+    color: whitesmoke;
+    font-weight: 400;
+    font: normal normal medium 33px/39px Roboto;
+}
+.mod-content-inner button:active {
+    box-shadow: 0 1px 10px #FF405F;
+transform: scale(1.05);
+transition: 0s;
+}
 
+
+@media only screen and (max-width : 414px) {
+
+    .mod-content{
+        margin-top: 30%;
+        width: max-content;
+        width: 60%;
+        
+    }
+    .mod-content h1{
+        font-size: 5vw;
+    }
 }
