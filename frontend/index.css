@@ -1,5 +1,6 @@
 body{
     color: #484A4B;
+    font-family: Roboto;
 }
 
 .log_button
@@ -138,9 +139,9 @@ transition: 0s;
 .card-description
 {
     text-align: left;
-    font-family: Gilroy;
-    font-weight: 300;
-    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 15px;
     letter-spacing: 0px;
     color: #455A64;
     opacity: 0.95;
