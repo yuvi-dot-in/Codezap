@@ -1,0 +1,181 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 max-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>CodeZap</title>
+
+</head>
+<style>
+    body{
+        font-family: Roboto;
+    }
+    .my-nav {
+        background-color: #484A4B;
+        height: 80px;
+        width: 100%;
+
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .log_button {
+        background: #FF405F 0% 0% no-repeat padding-box;
+        box-shadow: 0px 5px 38px #00000042;
+        border-radius: 10px;
+        opacity: 1;
+        width: 90px;
+        height: 35px;
+        font-size: 16px;
+        border: 0px;
+        margin-left: auto;
+        margin-right: 35px;
+        margin-bottom: 20px;
+        color: whitesmoke;
+        font-weight: 400;
+        box-shadow: #00000042 0px 5px 38px;
+        font: normal normal medium 33px/39px Roboto;
+    }
+
+
+    button:focus {
+        outline: none;
+    }
+
+    button:active {
+        box-shadow: 0 1px 10px #FF405F;
+        transform: scale(1.05);
+        transition: 0s;
+    }
+
+    .my-hr {
+        z-index: 2;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        height: 12px;
+        background-color: #FF405F;
+        box-shadow: 0px 2px 20px #00000042;
+        opacity: 1;
+    }
+    .wrapper{
+        display: grid;
+        grid-template-columns: 4fr 3fr;
+        column-gap: 5%;
+        height: 100%;
+    }
+    .wrapper .intro{
+        margin: 100px;
+        line-height: 1;
+    }
+    .logo{
+        font-size: 5vw;
+        color: #FF405F;
+        font-weight: 700;
+    }
+    .title{
+        
+        font-weight: 500;
+    }
+    .code{
+        color: #484A4B;
+        font-size: 7vw;
+    }
+    .zap{
+        color: #FF405F;
+        font-size: 7vw;
+    }
+    .org{
+        font-size: 1.8vw;
+        color: #484A4B;
+        font-weight: 700;
+    }
+    .wrapper .login-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        background-color: #ffff;
+        box-shadow: 0px 5px 36px #00000029;
+        height: max-content;
+        margin: 10% 15% 10% 0%;
+        border-bottom: #FF405F solid 8px;
+    }
+    form{
+        width: 100%;
+        padding: 10px 40px;
+    }
+    form button{
+        margin-left: 35% !important;
+    }
+
+    .textbox,.password{
+        border: #CDCECE solid 1px;
+        width: 100%;
+        padding:5px 10px;
+    }
+    .login-card button{
+        background-color: #FF405F !important;
+        color: #ffff;
+        text-align: center;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 10px;
+    }
+    h4 { 
+            display: flex; 
+            flex-direction: row; 
+            margin-top: 30px;
+            color: #FF405F;
+            font-size: large;
+        } 
+          
+        h4:before, 
+        h4:after { 
+            content: ""; 
+            flex: 1 1; 
+            border-bottom: 2px solid #FF405F; 
+            margin: auto; 
+        }
+    
+    
+
+</style>
+
+<body style="background-color: #F2F3F7;">
+    <nav class="navbar  my-nav">
+        <button class="my-2 my-sm-0 log_button" type="submit">Log Out</button>
+    </nav>
+    <hr class="my-hr">
+    <div class="wrapper">
+        <div class="intro">
+            <span class="logo">&lt&gt</span>
+            <p class="title" style="font-size: 0;">
+                <span class='code'>Code</span>
+                <span class="zap">Zap</span>
+                <span class='code'>.</span>
+            </p>
+            <p class="org">
+                By Indian Society for Technical Education VIT
+            </p>
+        </div>
+        <div class="login-card">
+            <h1 style="color: #484A4B;">LOGIN</h1>
+            <form action="./index.html" method="post">
+                <input type="text" name="username" id="username" placeholder="Username" class="textbox"><br><br>
+                <input type="password" name="password" id="password" placeholder="Password" class="password"><br><br>
+                <button  class="submit"  >CodeZap!</button>
+                <h4>&nbsp; OR &nbsp; </h4>
+            </form>
+            <span class="signup">SIGN UP NOW</span><br>
+            <button class="button">Sign Up!</button>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
